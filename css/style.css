@@ -1,0 +1,327 @@
+/* Google Font */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap");
+
+/* Google Font */
+
+body {
+    margin: 0;
+    padding: 16px;
+    font-family: "Poppins", sans-serif;
+}
+
+
+/* Navbar */
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    align-items: center;
+}
+
+nav .left img {
+    width: 80%;
+}
+
+nav .left img.logoDark {
+    display: none;
+}
+
+nav .right {
+    width: 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .right:hover {
+    cursor: pointer;
+}
+
+nav .right .mode img {
+    width: 67%;
+}
+
+nav .right .mode :nth-child(2) {
+    display: none;
+}
+
+nav .right .github img.githubDark {
+    display: none;
+}
+
+nav .right .moon,
+.sun {
+    font-size: 37px;
+}
+
+nav .right img {
+    width: 67%;
+}
+
+
+/* Navbar */
+
+
+/* Caption */
+
+.caption {
+    text-align: center;
+    padding: 20px;
+    margin-top: 72px;
+}
+
+.caption .main {
+    color: #525252;
+    font-size: 45px;
+    font-weight: 500;
+}
+
+.caption .submain {
+    color: #525252;
+    font-size: 30px;
+    font-weight: 500;
+}
+
+
+/* Caption */
+
+
+/* Main Content */
+
+.maincontent {
+    padding: 20px;
+    margin-top: 22px;
+}
+
+.maincontent .left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.maincontent .left img {
+    width: 80%;
+}
+
+.maincontent .right {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.maincontent .right .tittle {
+    color: #525252;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 52px;
+}
+
+
+/* form */
+
+form {
+    margin: 0 auto;
+    width: 70%;
+}
+
+form input.data {
+    color: #525252;
+    height: 45px;
+    width: 100%;
+    border: 2px solid #59c714;
+    border-radius: 10px;
+}
+
+form input#visibitityPassword {
+    margin-top: 18px;
+}
+
+span#visible {
+    font-size: 14px;
+    color: #525252;
+}
+
+form label {
+    color: #525252;
+}
+
+form button {
+    border-radius: 23px;
+    border: 0;
+    padding: 8px 24px;
+    background-color: #59c714;
+    display: grid;
+    margin: 0 auto;
+}
+
+form button:hover {
+    transition: 0.3s;
+    background-color: #52b514;
+}
+
+form .caption-button {
+    margin-top: 6px;
+    text-align: center;
+    font-size: 11px;
+}
+
+form span {
+    color: #59c714;
+}
+
+::placeholder {
+    font-size: 13px;
+    font-style: italic;
+}
+
+
+/* form */
+
+
+/* Main Content */
+
+
+/* darkmode navbar*/
+
+.dark {
+    background-color: #2c2c2c;
+    transition: 0.3s;
+}
+
+
+/* logo */
+
+nav .ActiveLogo img.logoLight {
+    display: none;
+}
+
+nav .ActiveLogo img.logoDark {
+    display: flex;
+}
+
+
+/* sun and moon */
+
+nav .right .ActiveMode :nth-child(1) {
+    display: none;
+}
+
+nav .right .ActiveMode :nth-child(2) {
+    display: flex;
+    color: #ffffff;
+}
+
+
+/* github */
+
+nav .right .ActiveGithub img.githubLight {
+    display: none;
+}
+
+nav .right .ActiveGithub img.githubDark {
+    display: flex;
+}
+
+
+/* caption */
+
+.dark .caption .main {
+    color: #cdcdcd;
+}
+
+.dark .caption .submain {
+    color: #cdcdcd;
+}
+
+
+/* form */
+
+.dark .form .tittle {
+    color: #cdcdcd;
+}
+
+.dark label {
+    color: #cdcdcd;
+}
+
+.dark .caption-button {
+    color: #cdcdcd;
+}
+
+.dark input {
+    background-color: #3e3e3e;
+    color: #cdcdcd;
+}
+
+.dark span#visible {
+    color: #cdcdcd;
+}
+
+
+/* darkmode navbar*/
+
+
+/* responsive */
+
+@media (max-width: 768px) {
+    /* navbar */
+    nav .left img {
+        width: 70%;
+    }
+    nav .right {
+        width: 14%;
+    }
+    /* caption */
+    .caption {
+        margin-top: 80px;
+    }
+    .caption .main {
+        color: #525252;
+        font-size: 35px;
+        font-weight: 500;
+    }
+    .caption .submain {
+        color: #525252;
+        font-size: 20px;
+        font-weight: 500;
+    }
+    /* form */
+    .maincontent .left img {
+        width: 100%;
+    }
+    .maincontent .right .tittle {
+        font-size: 17px;
+    }
+    form label {
+        font-size: 14px;
+    }
+    form input {
+        height: 41px;
+    }
+    form button {
+        padding: 6px 19px;
+        margin-top: -50px;
+        font-size: 15px;
+        margin-bottom: 10px;
+    }
+    form .caption-button {
+        font-size: 9px;
+    }
+    .form .seePassword {
+        margin-top: -12px;
+        position: relative;
+    }
+    span#visible {
+        font-size: 10px;
+        top: 50%;
+        left: 17px;
+        position: absolute;
+    }
+}
+
+
+/* responsive */

@@ -13,16 +13,115 @@
     <link rel="stylesheet" href="css/style.css">
 
     <!-- Favicon -->
-    <link rel="stylesheet" href="">
+    <link rel="shortcut icon" href="assets/img/logo dark.png">
 
-    <title>Hello, world!</title>
+    <title>Resigter</title>
 </head>
 
 <body>
-    <h1>Hello, world!</h1>
+
+
+    <!-- NAVBAR -->
+    <div class="container">
+        <section>
+            <nav>
+                <div class="left" id="logo">
+                    <!-- logo -->
+                    <a href="#">
+                        <img src="assets/img/logo light.png" alt="ARLOGO" class="logoLight">
+                    </a>
+
+                    <a href="#">
+                        <img src="assets/img/logo dark.png" alt="ARLOGO" class="logoDark">
+                    </a>
+                    <!-- logo -->
+                </div>
+
+
+                <div class="right">
+                    <div class="mode" id="mode">
+                        <img src="assets/img/dark mode.png" alt="dark" class="darkMode">
+
+                        <img src="assets/img/light mode.png" alt="dark" class="darkMode">
+                    </div>
+                    <!-- dark mode -->
+
+                    <!-- logo github -->
+                    <div class="github" id="github">
+                        <a href="#">
+                            <img src="assets/img/github light.png" alt="github" class="githubLight">
+                        </a>
+
+                        <a href="#">
+                            <img src="assets/img/github dark.png" alt="github" class="githubDark">
+                        </a>
+                        <!-- logo github -->
+                    </div>
+                </div>
+            </nav>
+        </section>
+        <!-- NAVBAR -->
+
+
+        <!-- CAPTION -->
+        <section class="caption">
+            <p class="main">Hello</p>
+            <p class="submain">Please sign up first before you login</p>
+
+        </section>
+        <!-- CAPTION -->
+
+
+        <!-- MAIN CONTENT -->
+        <section class="maincontent">
+            <div class="row">
+                <div class="left col-6">
+                    <img src="assets/img/register.png" alt="register" class="img-fluid">
+                </div>
+
+                <div class="right col-6">
+                    <div class="form">
+                        <p class="tittle">Sign Up</p>
+                        <form action="" method="">
+                            <label for="name">Name</label>
+                            <br>
+                            <input type="text" name="name" id="name" placeholder=" Ex: Prawita Wicaksono" required class="data">
+
+                            <br><br><br>
+
+                            <label for="password">Password</label>
+                            <br>
+                            <input type="password" name="password" id="password" required class="data">
+                            <br>
+
+                            <div class="seePassword">
+                                <input type="checkbox" id="visibitityPassword"><span id="visible"> Show Password</span>
+                            </div>
+
+                            <br><br><br><br>
+
+                            <button type="submit" name="submit" class="text-white">Sign Up</button>
+                            <p class="caption-button">Already have an account?
+                                <a href="login.html" class="text-decoration-none"><span>Login</span></a>
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        <!-- MAIN CONTENT -->
+    </div>
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+
+    <!-- ION ICONS -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <script src="js/script.js"></script>
 
 
 </body>
