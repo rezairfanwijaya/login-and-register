@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700&display=swap');
+html {
+    overflow-x: hidden;
+}
+
+body {
+    overflow-x: hidden;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bgOnLight);
+}
+
+:root {
+    --textOnLight: #1D1D1D;
+    --textOnDark: #ffffff;
+    --navFootOnLight: #FFFFFF;
+    --navFootOnDark: #2F2F2F;
+    --bgOnLight: #F9F9F9;
+    --bgOnDark: #2C2C2C;
+    --btnAll: #59C714;
+    --bgInput: #F1F1F1;
+    --borderInput: #FFB201;
+    --bgFormOnDark: #373737;
+    --bgInputOndark: #484848;
+}
+
+
+/* navbar */
+
+.navbar {
+    /* border: 2px solid red; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+}
+
+.navbar .left img {
+    width: 40%;
+}
+
+.navbar .left :nth-child(2) {
+    display: none;
+}
+
+.navbar .right {
+    margin-left: 28px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar .right img {
+    width: 23%;
+}
+
+.navbar .right a img {
+    width: 50%;
+}
+
+.navbar .right :nth-child(2),
+.navbar .right .github :nth-child(2) {
+    display: none;
+}
+
+
+/* navbar */
+
+
+/* setting darkmode */
+
+.dark {
+    background-color: var(--bgOnDark);
+    transition: .5s;
+}
+
+.dark .navbar {
+    background-color: var(--navFootOnDark);
+    transition: .4s;
+}
+
+.dark .navbar .right :nth-child(1),
+.dark .left :nth-child(1) {
+    display: none;
+}
+
+.dark .navbar .left :nth-child(2),
+.dark .navbar .right :nth-child(2) {
+    display: block;
+}
+
+.dark .main p.title,
+.dark .main p.sub-title,
+.dark .main .form p.title,
+.dark .main .form .field label,
+.dark .main .form .btnLogin p.textToSignup {
+    color: var(--textOnDark);
+}
+
+.dark .main .form {
+    background-color: var(--bgFormOnDark);
+}
+
+.dark .main .form .field input {
+    background-color: var(--bgInputOndark);
+    color: var(--textOnDark);
+}
+
+.dark .main .form .field.password :nth-child(3),
+.dark .main .form .field.password :nth-child(4) {
+    display: none;
+}
+
+.dark .main .form .field.password :nth-child(5) {
+    display: block;
+}
+
+.dark#see .main .form .field.password :nth-child(5),
+.dark#see .main .form .field.password :nth-child(3),
+.dark#see .main .form .field.password :nth-child(4) {
+    display: none;
+}
+
+.dark#see .main .form .field.password :nth-child(6) {
+    display: block;
+}
+
+.dark .footer {
+    background-color: var(--bgOnDark);
+}
+
+
+/* setting darkmode */
+
+
+/* main */
+
+.main {
+    margin: 50px 0;
+}
+
+
+/* text welcome */
+
+.main p.title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: var(--textOnLight);
+}
+
+.main p.sub-title {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: var(--textOnLight);
+}
+
+
+/* vektor  */
+
+.main .vector {
+    margin-top: 45px;
+    /* border: 2px solid red; */
+}
+
+
+/* form */
+
+.main .form {
+    background-color: #fff;
+    box-shadow: 2px -5px 8px rgba(0, 0, 0, 10%);
+    padding: 30px;
+    margin-top: 45px;
+    border-radius: 37px 37px 0 0;
+}
+
+.main .form p.title {
+    font-size: 1.5rem;
+    text-align: center;
+    font-weight: 700;
+    color: var(--textOnLight);
+    letter-spacing: 2px;
+}
+
+.main .form .field label {
+    color: var(--textOnLight);
+    font-size: .9rem;
+}
+
+.main .form .field input {
+    width: 100%;
+    height: 40px;
+    border: none;
+    font-size: .8rem;
+    padding: 0 10px;
+    background-color: var(--bgInput);
+}
+
+.main .form .field input:focus {
+    outline: 2px solid var(--borderInput);
+}
+
+.main .form .field ::placeholder {
+    font-size: .8rem;
+    font-style: italic;
+}
+
+.main .form .field.password {
+    position: relative;
+}
+
+.main .form .field.password :nth-child(3),
+.main .form .field.password :nth-child(4),
+.main .form .field.password :nth-child(5),
+.main .form .field.password :nth-child(6) {
+    width: 22px;
+    position: absolute;
+    top: 60%;
+    right: 7px;
+}
+
+.main .form .field.password :nth-child(4),
+.main .form .field.password :nth-child(5),
+.main .form .field.password :nth-child(6) {
+    display: none;
+}
+
+#see .main .form .field.password :nth-child(3) {
+    display: none;
+}
+
+#see .main .form .field.password :nth-child(4) {
+    display: block;
+}
+
+.main .form .btnLogin button {
+    display: grid;
+    background-color: var(--btnAll);
+    color: var(--textOnDark);
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1.2rem;
+    padding: 8px 55px;
+    border: none;
+    letter-spacing: 1px;
+}
+
+.main .form .btnLogin p.textToSignup {
+    margin-top: 10px;
+    font-size: .6rem;
+    text-align: center;
+}
+
+.main .form .btnLogin p.textToSignup span {
+    color: var(--btnAll);
+}
+
+
+/* main */
+
+
+/* footer */
+
+.footer {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    background-color: var(--bgOnLight);
+}
+
+.footer img {
+    width: 30px;
+}
