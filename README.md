@@ -4,6 +4,8 @@ LOGIN AND SIGNUP MANAGEMENT
 
 ON DEVELOPING
 
+testing : https://rezairfanwijaya.github.io/login-and-register/
+
 
 ![Signup](https://user-images.githubusercontent.com/87264553/145619187-57c4ef4b-3833-4f41-82ff-89354edc00ca.png)
 
