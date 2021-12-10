@@ -127,6 +127,14 @@ body {
     background-color: var(--bgOnDark);
 }
 
+.dark .footer a :nth-child(1) {
+    display: none;
+}
+
+.dark .footer a :nth-child(2) {
+    display: block;
+}
+
 
 /* setting darkmode */
 
@@ -267,4 +275,12 @@ body {
 
 .footer img {
     width: 30px;
+}
+
+.footer a :nth-child(2) {
+    display: none;
+}
+
+.footer a :nth-child(1) {
+    display: block;
 }
