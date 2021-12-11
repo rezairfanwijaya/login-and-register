@@ -284,3 +284,30 @@ body {
 .footer a :nth-child(1) {
     display: block;
 }
+
+
+/* responsive */
+
+
+/* tablet */
+
+@media (min-width:767px) and (max-width:1020px) {
+    /* navbar */
+    .navbar .right {
+        width: max-content;
+    }
+    /* main section */
+    .main {
+        padding: 0 25px;
+    }
+    .row {
+        margin: 100px 0;
+    }
+    /* form */
+    .main .form {
+        box-shadow: 2px 5px 20px rgba(0, 0, 0, 7%);
+        padding: 25px;
+        margin-top: 0;
+        border-radius: 10px;
+    }
+}
