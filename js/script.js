@@ -8,7 +8,7 @@
 
 
  function darkmode(isdark) {
-     //  jika userm memilih dark (menekan gambar bulan di navbar)
+     //  jika user memilih dark (menekan gambar bulan di navbar)
      if (isdark) {
          // maka tag body akan memiliki atribut class dengan value 'dark'
          document.body.setAttribute('class', 'dark')
