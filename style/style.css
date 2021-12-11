@@ -123,6 +123,25 @@ body {
     display: block;
 }
 
+.dark .main .form .Confirm-password :nth-child(3),
+.dark .main .form .Confirm-password :nth-child(4) {
+    display: none;
+}
+
+.dark .main .form .Confirm-password :nth-child(5) {
+    display: block;
+}
+
+.dark .main form#see .Confirm-password :nth-child(5),
+.dark .main form#see .Confirm-password :nth-child(3),
+.dark .main form#see .Confirm-password :nth-child(4) {
+    display: none;
+}
+
+.dark .main form#see .Confirm-password :nth-child(6) {
+    display: block;
+}
+
 .dark .main .form #remember {
     color: var(--textOnDark);
 }
@@ -242,6 +261,34 @@ body {
     display: block;
 }
 
+.main .form .Confirm-password {
+    position: relative;
+}
+
+.main .form .Confirm-password :nth-child(3),
+.main .form .Confirm-password :nth-child(4),
+.main .form .Confirm-password :nth-child(5),
+.main .form .Confirm-password :nth-child(6) {
+    width: 22px;
+    position: absolute;
+    top: 45px;
+    right: 6px;
+}
+
+.main .form .Confirm-password :nth-child(4),
+.main .form .Confirm-password :nth-child(5),
+.main .form .Confirm-password :nth-child(6) {
+    display: none;
+}
+
+.main form#see .Confirm-password :nth-child(3) {
+    display: none;
+}
+
+.main form#see .Confirm-password :nth-child(4) {
+    display: block;
+}
+
 .main .form #remember {
     font-size: .8rem;
     color: var(--textOnLight);
@@ -265,8 +312,9 @@ body {
     text-align: center;
 }
 
-.main .form .btnLogin p.textToSignup span {
+.main .form .btnLogin p.textToSignup span a {
     color: var(--btnAll);
+    text-decoration: none;
 }
 
 
@@ -317,6 +365,26 @@ body {
         box-shadow: 2px 5px 20px rgba(0, 0, 0, 7%);
         padding: 25px;
         margin-top: 0;
+        border-radius: 10px;
+    }
+}
+
+
+/* desktop */
+
+@media (min-width: 1021px) {
+    /* main section */
+    .main {
+        padding: 0 45px;
+    }
+    .row {
+        margin: 180px 0;
+    }
+    /* form */
+    .main .form {
+        padding: 55px;
+        margin-top: 0;
+        width: 120%;
         border-radius: 10px;
     }
 }
