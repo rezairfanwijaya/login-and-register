@@ -1,3 +1,17 @@
+<?php
+// import file function 
+require_once('function/function.php');
+
+// if button signup si clicked
+if (isset($_POST["signup"])) {
+    if (registration($_POST) > 0) {
+        $success = true;
+    }
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -72,12 +86,12 @@
 
                     <div class="mt-5 field">
                         <label for="username">Username</label>
-                        <input type="text" name="username" placeholder="ex: Abdas" id="username" autocomplete="off">
+                        <input type="text" name="username" placeholder="ex: Abdas" id="username" autocomplete="off" required>
                     </div>
 
                     <div class="mt-5 field password">
                         <label for="password">Password</label>
-                        <input type="password" name="password1" id="password" autocomplete="off">
+                        <input type="password" name="password1" id="password" autocomplete="off" required>
                         <img src="assets/icon/see-light.png" alt="" onclick="see(true)">
                         <img src="assets/icon/hide-light.png" alt="" onclick="see(false)">
                         <img src="assets/icon/see-dark.png" alt="" onclick="see(true)">
@@ -87,7 +101,7 @@
 
                     <div class="mt-5 field Confirm-password">
                         <label for="password">Confirm Password</label>
-                        <input type="password" name="password2" id="ConfirmPassword" autocomplete="off">
+                        <input type="password" name="password2" id="ConfirmPassword" autocomplete="off" required>
                         <img src="assets/icon/see-light.png" alt="" onclick="seeOnConfirm(true)">
                         <img src="assets/icon/hide-light.png" alt="" onclick="seeOnConfirm(false)">
                         <img src="assets/icon/see-dark.png" alt="" onclick="seeOnConfirm(true)">
@@ -95,9 +109,13 @@
 
                     </div>
 
+                    <?php if (isset($passwordError)) : ?>
+                        <p class="mt-2 text-danger">error</p>
+                    <?php endif ?>
+
                     <div class="mt-5 btnLogin">
-                        <button type="submit" name="login">Sign Up</button>
-                        <p class="textToSignup">Don't have an account yet? <span><a href="index.html">Login</a></span></p>
+                        <button type="submit" name="signup">Sign Up</button>
+                        <p class="textToSignup">Don't have an account yet? <span><a href="index.php">Login</a></span></p>
                     </div>
                 </form>
             </div>
@@ -116,15 +134,40 @@
     <!-- footer -->
 
 
+    <!-- JS bootstrap -->
+    <script src="lib/node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="lib/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
     <!-- aos -->
     <script src="https://unpkg.com/aos@next/dist/aos.js "></script>
     <script>
         AOS.init();
     </script>
 
+    <!-- sweet alert -->
+    <script src="lib/node_modules/sweetalert/dist/sweetalert.min.js"></script>
+
 
     <!-- JS external -->
     <script src="js/script.js"></script>
+
+    <!-- sweet alert for signup success-->
+    <?php if (isset($success)) : ?>
+        <script>
+            swal({
+                title: "Sign Up Success",
+                icon: "success",
+                button: true,
+                
+            })
+            .then((login) => {
+                if (login){
+                    location.href='index.php'    
+                }
+            });
+        </script>
+    <?php endif ?>
+
 </body>
 
 </html>
