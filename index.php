@@ -92,7 +92,7 @@
 
                     <div class="mt-5 btnLogin">
                         <button type="submit" name="login">Login</button>
-                        <p class="textToSignup">Don't have an account yet? <span><a href="signup.html">Sign up</a></span></p>
+                        <p class="textToSignup">Don't have an account yet? <span><a href="signup.php">Sign up</a></span></p>
                     </div>
                 </form>
             </div>
