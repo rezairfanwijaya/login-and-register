@@ -62,7 +62,7 @@
 
         <!-- vektor dan form-->
 
-        <div class="row">
+        <div class="row" >
             <div class="col-12 col-md-6 vector">
                 <img src="assets/illustration/login.png" alt="login-vector" class="img-fluid" data-aos="fade-up" data-aos-delay="60" data-aos-duration="2000">
             </div>
