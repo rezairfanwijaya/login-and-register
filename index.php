@@ -1,4 +1,65 @@
+<?php
 
+// start session
+session_start();
+
+require_once('function/function.php');
+
+if (isset($_POST["login"])) {
+
+    // retrieve the data typed by the user
+    $username = $_POST["username"];
+    $password = $_POST["password"];
+
+    // check if there is a user in the database
+    $sql = "SELECT * FROM user where nama = '$username' ";
+    $query = mysqli_query($conn, $sql);
+
+    // if the user is in the database then check the password
+    if (mysqli_num_rows($query) === 1) {
+        // check password
+        $data = mysqli_fetch_assoc($query);
+        if (password_verify($password, $data["password"])) {
+
+            // make cookie
+            if (isset($_POST["remember"])) {
+                setcookie("id", $data["id"], time() + 60);
+                setcookie("username", hash("sha256", $data["nama"]), time() + 60);
+            }
+
+            // make session
+            $_SESSION["id"] = $data["id"];
+            $_SESSION["login"] = true;
+
+            // success login
+            $success = true;
+        } else {
+
+            // if password wrong
+            echo '
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong>Password wrong</strong>, Please check your password
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        ';
+        }
+    } else {
+        // if username dont match
+        echo '
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong>Sorry! unregistered user</strong>, Please check your username or signup first
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        ';
+    }
+}
+
+
+?>
 
 
 <!DOCTYPE html>
@@ -56,7 +117,7 @@
     </section>
     <!-- navbar -->
 
-    <a href="coba.html" class="text-white text-center">KLIK saya</a>
+
 
     <!-- main -->
     <section class="main">
@@ -67,7 +128,7 @@
 
         <!-- vektor dan form-->
 
-        <div class="row" >
+        <div class="row">
             <div class="col-12 col-md-6 vector">
                 <img src="assets/illustration/login.png" alt="login-vector" class="img-fluid" data-aos="fade-up" data-aos-delay="60" data-aos-duration="2000">
             </div>
@@ -78,12 +139,12 @@
 
                     <div class="mt-5 field">
                         <label for="username">Username</label>
-                        <input type="text" name="username" placeholder="ex: Abdas" id="username" autocomplete="off">
+                        <input type="text" name="username" placeholder="ex: Abdas" id="username" autocomplete="off" required>
                     </div>
 
                     <div class="mt-5 field password">
                         <label for="password">Password</label>
-                        <input type="password" name="password" id="password" autocomplete="off">
+                        <input type="password" name="password" id="password" autocomplete="off" required>
                         <img src="assets/icon/see-light.png" alt="" onclick="see(true)">
                         <img src="assets/icon/hide-light.png" alt="" onclick="see(false)">
                         <img src="assets/icon/see-dark.png" alt="" onclick="see(true)">
@@ -92,7 +153,7 @@
                     </div>
 
                     <div class="mt-3">
-                        <input type="checkbox" id="check-box">
+                        <input type="checkbox" id="check-box" name="remember">
                         <label for="check-box" id="remember">Remember me</label>
                     </div>
 
@@ -117,15 +178,40 @@
     <!-- footer -->
 
 
+    <!-- jquery -->
+    <script src="lib/node_modules/jquery/dist/jquery.js"></script>
+
+    <!-- js bootstrap -->
+    <script src="lib/node_modules/bootstrap/dist/js/bootstrap.js"></script>
+
     <!-- aos -->
     <script src="https://unpkg.com/aos@next/dist/aos.js "></script>
     <script>
         AOS.init();
     </script>
 
-
     <!-- JS external -->
     <script src="js/script.js"></script>
+
+    <!-- sweet alert -->
+    <script src="lib/node_modules/sweetalert/dist/sweetalert.min.js"></script>
+    <?php if (isset($success)) : ?>
+        <script>
+            swal({
+                title: "Login Successfuly",
+                icon: "success",
+                button: true,
+            })
+            .then ((login)=>{
+                if (login){
+                    location.href= 'home.php'
+                }
+
+            });
+        </script>
+
+    <?php endif ?>
+
 </body>
 
 </html>

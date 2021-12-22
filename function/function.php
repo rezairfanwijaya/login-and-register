@@ -22,8 +22,8 @@ function registration($data)
     $password1 = mysqli_real_escape_string($conn, $data["password1"]);
     $password2 = mysqli_real_escape_string($conn, $data["password2"]);
 
-    // make username to lower
-    $name = strtolower(stripcslashes(str_replace("'",'',$name)));
+    // make username to lower and remove '
+    $name = strtolower(stripslashes(str_replace("'",'',$name)));
 
     // make sure no username is the same
     $sqlUser = "SELECT * FROM user where nama = '$name' ";
