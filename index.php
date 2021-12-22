@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -52,6 +55,8 @@
 
     </section>
     <!-- navbar -->
+
+    <a href="coba.html" class="text-white text-center">KLIK saya</a>
 
     <!-- main -->
     <section class="main">
