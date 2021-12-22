@@ -1,4 +1,8 @@
 <?php
+
+// cek session
+require_once 'session.php';
+
 // import file function 
 require_once('function/function.php');
 
@@ -115,7 +119,7 @@ if (isset($_POST["signup"])) {
 
                     <div class="mt-5 btnLogin">
                         <button type="submit" name="signup">Sign Up</button>
-                        <p class="textToSignup">Don't have an account yet? <span><a href="index.php">Login</a></span></p>
+                        <p class="textToSignup">Don't have an account yet? <span><a href="login.php">Login</a></span></p>
                     </div>
                 </form>
             </div>
